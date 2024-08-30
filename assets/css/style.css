@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "nav nav"
+        "menu menu"
+        "main main"
+        "footer footer";
+}
+
+
+/* inicio de nav */
+nav {
+    grid-area: nav;
+    height: 150px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(11, 11, 24, 1) 38%, rgba(0, 212, 255, 1) 93%);
+}
+
+nav img {
+    margin-right: 20px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    animation: move 4s ease infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(0);
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform:
+            translateX(0px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.enlace {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    padding: 20px 50px;
+    line-height: 150px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 150px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 15px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    transition: .5s;
+    font-size: 20px;
+    color: rgb(131, 58, 180);
+    color: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(240, 253, 29, 0.9248074229691877) 53%, rgba(252, 176, 69, 1) 100%);
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 150px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* fin de nav */
+
+
+/* inicio de menu */
+menu {
+    grid-area: menu;
+    text-align: center;
+    background: rgb(2, 0, 36);
+    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(11, 17, 24, 0.8015581232492998) 78%, rgba(33, 34, 34, 1) 100%);
+}
+
+menu input {
+    margin: 20px;
+    outline: none;
+    box-sizing: border-box;
+    height: 40px;
+    width: 0;
+    padding: 0 20px;
+    color: #000;
+    border-radius: 50px;
+    font-size: 15px;
+    border: 1px solid #d50000;
+    transition: all .7s ease;
+}
+
+::placeholder {
+    color: grey;
+}
+
+menu input .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: #d50000;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+menu input .btn i {
+    font-size: 20px;
+    color: white;
+    line-height: 40px;
+    transition: all .7 ease;
+}
+
+menu:hover input {
+    width: 350px;
+}
+
+menu:hover i {
+    transform: rotate(-360deg);
+}
+
+menu .btn:hover {
+    background: #cc0000;
+}
+
+/* fin del menu*/
+
+
+
+/* inicio de main */
+
+main {
+    grid-area: main;
+    box-sizing: border-box;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto auto auto;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(11, 11, 24, 1) 38%, rgba(0, 212, 255, 1) 93%);
+    gap: 20px;
+}
+
+.card {
+    box-sizing: border-box;
+    margin: 20px;
+    border: 1px solid #000;
+    width: 150px;
+    height: 280px;
+   
+}
+
+.card .imagen1 {
+    height: 150px;
+}
+
+.card .imagen1 img {
+    width: 148px;
+    height: 150px;
+   
+}
+
+.content {
+    height: 72px;
+
+}
+
+.content a {
+    text-align: center;
+    color: #000;
+}
+
+.content a:hover {
+    transition: .5s;
+    color: rgb(131, 58, 180);
+    color: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(240, 253, 29, 0.9248074229691877) 53%, rgba(252, 176, 69, 1) 100%);
+}
+
+.content a p {
+    margin: 0;
+}
+
+.card .btn {
+    border: 1px solid #000;
+    height: 40px;
+    animation-name: colorear;
+    animation-iteration-count:
+        infinite;
+    animation-duration: 2s;
+    transition: all 0.3s steps(5);
+}
+.card .btn:hover{
+    width: 100px;
+    height: 43px;
+}
+
+@keyframes colorear {
+    from {
+        background: rgb(2, 0, 36);
+        background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(25, 47, 91, 0.8015581232492998) 78%, rgba(33, 34, 34, 1) 100%);
+    }
+
+    to {
+        background: rgb(2, 0, 36);
+        background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(18, 59, 140, 0.8015581232492998) 78%, rgba(33, 34, 34, 1) 100%);
+    }
+}
+
+.card .btn p {
+    font-size: 18px;
+    color: #fff;
+}
+
+.card .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  fin del main */
+
+
+
+/* inicio del footer */
+footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-areas:
+    "nosotros servicios"
+    "contactos contactos";
+    background-color: #0a0a0b;
+}
+#nosotros{
+    grid-area: nosotros;
+    color: #fff;
+    text-align: center;
+}
+#nostros p{
+    font-size: 10px;
+}
+#nosotros h5{
+    margin: 20px;
+}
+#servicios{
+    grid-area: servicios;
+    color: #fff;
+    text-align: center;
+}
+#servicios h5{
+    margin: 20px;
+}
+#servicos ol li{
+    font-size: 10px;
+}
+#contactos{
+    grid-area: contactos;
+    color: #fff;
+}
+#contactos .informacion{
+    text-align: center;
+    margin: 10px;
+}
+#contactos .fuente{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ .fuente a i{
+    font-size: 40px;
+    color: #fff;
+    margin: 15px;
+}
+
+/* fin del footer*/
+
+
+
+@media (max-width: 952px) {
+    .enlace {
+        padding-left: 20px;
+    }
+
+    nav img {
+        height: 60px;
+    }
+
+    nav h2 {
+        font-size: 20px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+    main {
+        grid-area: main;
+        grid-template-columns: auto auto auto;
+    }
+    footer{
+        grid-template-areas:
+        "nosotros"
+        "servicios"
+        "contactos" ;
+    }
+}
+
+
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 300px;
+        height: 400px;
+        background: rgb(2, 0, 36);
+        background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(11, 17, 24, 0.8015581232492998) 78%, rgba(33, 34, 34, 1) 100%);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+    }
+
+    li a:hover,
+    li a.active {
+        background: none;
+        color: red;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    main {
+        grid-area: main;
+        grid-template-columns: auto auto;
+    }
+    footer{
+        grid-template-areas:
+        "nosotros"
+        "servicios"
+        "contactos" ;
+    }
+}
